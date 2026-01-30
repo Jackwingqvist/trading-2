@@ -1,0 +1,6 @@
+se/lunduniversity/kursregistrering/model/Course.class
+se/lunduniversity/kursregistrering/model/Enrollment.class
+se/lunduniversity/App.class
+se/lunduniversity/kursregistrering/MainApp.class
+se/lunduniversity/kursregistrering/model/Student.class
+se/lunduniversity/kursregistrering/controller/MainViewController.class

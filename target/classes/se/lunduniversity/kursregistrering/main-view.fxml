@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="se.lunduniversity.kursregistrering.controller.MainViewController">
+
+    <top>
+        <Label text="Kursregistrering" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+        </Label>
+    </top>
+
+    <center>
+        <TableView fx:id="enrollmentTable">
+            <columns>
+                <TableColumn fx:id="studentCol" text="Student"/>
+                <TableColumn fx:id="courseCodeCol" text="Kod"/>
+                <TableColumn fx:id="courseNameCol" text="Kurs"/>
+                <TableColumn fx:id="creditsCol" text="Hp"/>
+                <TableColumn fx:id="statusCol" text="Status"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <VBox spacing="10">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+
+            <TextField fx:id="searchField" promptText="Sök (student/kurskod/kursnamn/status)"/>
+
+            <GridPane hgap="10" vgap="10">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="25"/>
+                    <ColumnConstraints percentWidth="25"/>
+                    <ColumnConstraints percentWidth="25"/>
+                    <ColumnConstraints percentWidth="25"/>
+                </columnConstraints>
+
+                <TextField fx:id="studentIdField" promptText="Student-ID" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="firstNameField" promptText="Förnamn"    GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <TextField fx:id="lastNameField"  promptText="Efternamn"  GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                <TextField fx:id="programField"   promptText="Program"    GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+
+                <TextField fx:id="courseCodeField" promptText="Kurskod"   GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <TextField fx:id="courseNameField" promptText="Kursnamn"  GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <TextField fx:id="creditsField"    promptText="Hp (t.ex 7.5)" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+
+                <ComboBox fx:id="statusCombo" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+            </GridPane>
+
+            <HBox spacing="10">
+                <Button text="Lägg till" onAction="#handleAddEnrollment"/>
+                <Button text="Ta bort markerad" onAction="#handleRemoveSelected"/>
+            </HBox>
+
+        </VBox>
+    </bottom>
+
+</BorderPane>
